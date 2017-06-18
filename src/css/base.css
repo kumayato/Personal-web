@@ -395,6 +395,11 @@ a.section-2__nav-item_status_active {
     position: relative;
     margin-top: 30px;
 }
+.section-4__carrousel__main {
+    margin: 0 auto;
+    position: relative;
+    width: 1208px;
+}
 .section-4__carrousel-item {
     width: 600px;
     height: 281px;
