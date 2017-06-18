@@ -1,0 +1,236 @@
+/*边框按钮*/
+.section-1__sliderImg {
+    width:900px;
+    height: 506px;
+    position: relative;
+    margin: 1rem auto;
+    border: 2rem solid #fff;
+    overflow: hidden;
+    box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.3);
+}
+
+.section-1__sliderImg input {
+    display: none;
+}
+
+.section-1__sliderImg label {
+    width: 225px;
+    height: 32px;
+    text-align: center;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 32px;
+    font-size: 2.4rem;
+    float: left;
+    position: relative;
+    margin-top: 440px;
+    z-index: 1000;
+    font-weight: 700;
+}
+
+.section-1__sliderImg label::before{
+    content: '';
+    width: 35px;
+    height: 35px;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 50%;
+    margin-left: -17px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 4px rgba(102, 102, 102, 0.5);
+    z-index: -1;
+}
+
+.section-1__sliderImg label:not(:last-of-type)::after{
+    content: '';
+    width: 1px;
+    height: 506px;
+    position: absolute;
+    right: 0;
+    top: -37rem;
+    background: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    background:    -moz-linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    background:      -o-linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    background:         linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+
+.section-1__sliderImg input:checked + label{
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.section-1__sliderImg input:checked + label::before{
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 0px 0px 4px rgba(51, 51, 51, 0.5);
+}
+
+/*图片区域*/
+/*原理
+1.给大盒子分别设置背景图片，通过单选框的checked属性来控制插入哪一种图片做背景。
+2.给大盒子里的每一个div里面的第一个span设置图一为背景，第二个span设置图二为背景，依次内推。
+3.第二个div的span背景图片向左边偏移一个div的宽度，第三个div的span背景图片向左边偏移二个div的宽度，以此类推，使拼凑成完整图像。
+4.div溢出隐藏，div里面的span都向左偏移一个div的宽度，使之隐藏。*/
+
+.slider-bgimg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+.slider-bgimg div {
+    width: 225px;
+    height: 100%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+.slider-bgimg div > span{
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -225px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -1000em;
+    -webkit-transition: all .6s ease-in-out;
+       -moz-transition: all .6s ease-in-out;
+        -ms-transition: all .6s ease-in-out;
+         -o-transition: all .6s ease-in-out;
+            transition: all .6s ease-in-out;
+}
+
+/*选中哪一个单选按钮加载哪一张图片*/
+.section-1__sliderImg input.select-img-1:checked ~ .slider-bgimg,
+.slider-bgimg > div > span:nth-child(1) {
+    background-image: url("../images/gintama-1.jpg");
+}
+.section-1__sliderImg input.select-img-2:checked ~ .slider-bgimg,
+.slider-bgimg > div > span:nth-child(2)
+ {
+    background-image: url("../images/gintama-2.jpg");
+}
+.section-1__sliderImg input.select-img-3:checked ~ .slider-bgimg,
+.slider-bgimg > div > span:nth-child(3) {
+    background-image: url("../images/gintama-3.jpg");
+}
+.section-1__sliderImg input.select-img-4:checked ~ .slider-bgimg,
+.slider-bgimg > div > span:nth-child(4){
+    background-image: url("../images/gintama-4.jpg");
+}
+
+.slider-bgimg > div:nth-child(2) > span {
+    background-position: -225px 0;
+}
+.slider-bgimg > div:nth-child(3) > span {
+    background-position: -450px 0;
+}
+.slider-bgimg > div:nth-child(4) > span {
+     background-position: -675px 0;
+ }
+
+/*只要有单选框选中，所有的span飘走，只要当前选中的飘进来*/
+.section-1__sliderImg input:checked ~ .slider-bgimg span {
+      -webkit-animation:slideOut .6s ease-in-out;
+         -moz-animation:slideOut .6s ease-in-out;
+          -ms-animation:slideOut .6s ease-in-out;
+           -o-animation:slideOut .6s ease-in-out;
+              animation:slideOut .6s ease-in-out;
+}
+
+@-webkit-keyframes slideOut{
+    0%{ left: 0px; }
+    100%{ left: 225px; }
+}
+@-moz-keyframes slideOut{
+    0%{ left: 0px; }
+    100%{ left: 225px; }
+}
+@-o-keyframes slideOut{
+    0%{ left: 0px; }
+    100%{ left: 225px; }
+}
+@-ms-keyframes slideOut{
+    0%{ left: 0px; }
+    100%{ left: 225px; }
+}
+@keyframes slideOut{
+    0%{ left: 0px; }
+    100%{ left: 225px; }
+}
+
+.section-1__sliderImg input.select-img-1:checked ~ .slider-bgimg > div > span:nth-child(1),
+.section-1__sliderImg input.select-img-2:checked ~ .slider-bgimg > div > span:nth-child(2),
+.section-1__sliderImg input.select-img-3:checked ~ .slider-bgimg > div > span:nth-child(3),
+.section-1__sliderImg input.select-img-4:checked ~ .slider-bgimg > div > span:nth-child(4) {
+    left: 0;
+    z-index: 10;
+    -webkit-animation: none;
+       -moz-animation: none;
+        -ms-animation: none;
+         -o-animation: none;
+            animation: none;
+}
+
+/*文字标题*/
+.slider-title {
+    position: absolute;
+    left: 0;
+    bottom: 90px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    z-index: 2000;
+}
+.slider-title > p {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.28);
+    -webkit-transform: translate(-100%,0);
+       -moz-transform: translate(-100%,0);
+        -ms-transform: translate(-100%,0);
+         -o-transform: translate(-100%,0);
+            transform: translate(-100%,0);
+    -webkit-transition: all .6s ease-in-out;
+       -moz-transition: all .6s ease-in-out;
+        -ms-transition: all .6s ease-in-out;
+         -o-transition: all .6s ease-in-out;
+            transition: all .6s ease-in-out;
+}
+.section-1__sliderImg input.select-img-1:checked ~ .slider-title > p:nth-child(1) {
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+}
+.section-1__sliderImg input.select-img-2:checked ~ .slider-title > p:nth-child(2) {
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+}
+.section-1__sliderImg input.select-img-3:checked ~ .slider-title > p:nth-child(3) {
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+}
+.section-1__sliderImg input.select-img-4:checked ~ .slider-title > p:nth-child(4) {
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+}

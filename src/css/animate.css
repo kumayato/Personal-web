@@ -1,0 +1,135 @@
+@import "base.css";
+@import "sliderImg.css";
+
+
+/*图片滑动效果*/
+/*_animate_init*/
+/*_animate_done*/
+
+/*第一板块*/
+.section-1__bgSwitch,
+.section-1__sliderImg {
+    transition: all 1s ease-in-out;
+}
+
+.section-1__title_animate_init {
+    opacity: 0;
+}
+.section-1__bgSwitch_animate_init {
+    transform: translate(-180%,0);
+    opacity: 0;
+}
+.section-1__sliderImg_animate_init {
+    opacity: 0;
+}
+
+.section-1__title_animate_done {
+    opacity: 1;
+}
+.section-1__bgSwitch_animate_done {
+    transform: translate(0,0);
+    opacity: 1;
+}
+.section-1__sliderImg_animate_done {
+    opacity: 1;
+}
+
+/*第二板块*/
+.section-2__title,
+.section-2__description {
+    transition: all 0.5s ease-in-out;
+}
+.section-2__title_animate_init,
+.section-2__description_animate_init {
+    transform: translate(0,100%);
+    opacity: 0;
+}
+.section-2__title_animate_done,
+.section-2__description_animate_done {
+    transform: translate(0,0);
+    opacity: 1;
+}
+.section-2__content {
+    transition: all 0.5s 0.5s ease-in-out;
+}
+.section-2__icon {
+    transition: all 0.5s 1s ease-in-out;
+}
+.section-2__photo {
+    transition: all 0.5s 1.5s ease-in-out;
+}
+.section-2__photo_animate_init,
+.section-2__icon_animate_init,
+.section-2__content_animate_init {
+    transform: translate(-100%,0);
+    opacity: 0;
+}
+.section-2__photo_animate_done,
+.section-2__icon_animate_done,
+.section-2__content_animate_done {
+    transform: translate(0,0);
+    opacity: 1;
+}
+
+/*第三板块*/
+.section-3__title,
+.section-3__description {
+    transition: all 0.5s ease-in-out;
+}
+
+.section-3__title_animate_init,
+.section-3__description_animate_init {
+    transform: translate(-100%,0);
+    opacity: 0;
+}
+.section-3__title_animate_done,
+.section-3__description_animate_done {
+    transform: translate(0,0);
+    opacity: 1;
+}
+
+/*第四板块*/
+.section-4__title,
+.section-4__description {
+    transition: all 0.5s ease-in-out;
+}
+
+.section-4__title_animate_init,
+.section-4__description_animate_init {
+    transform: translate(-100%,0);
+    opacity: 0;
+}
+.section-4__title_animate_done,
+.section-4__description_animate_done {
+    transform: translate(0,0);
+    opacity: 1;
+}
+
+/*第五版块*/
+.section-5__title,
+.section-5__description {
+    transition: all 0.5s ease-in-out;
+}
+
+.section-5__title_animate_init,
+.section-5__description_animate_init {
+    transform: translate(-100%,0);
+    opacity: 0;
+}
+.section-5__title_animate_done,
+.section-5__description_animate_done {
+    transform: translate(0,0);
+    opacity: 1;
+}
+
+.section-5__touchMe {
+    transition: all 0.5s 0.5s ease-in-out;
+}
+.section-5__touchMe_animate_init {
+    opacity: 0;
+    transform: translate(0,100%);
+}
+.section-5__touchMe_animate_done {
+    opacity: 1;
+    transform: translate(0,0);
+}

@@ -1,0 +1,719 @@
+/*css初始化*/
+html {
+    font: 62.5% "microsoft yahei";
+}
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+    color: #333;
+    background: url("../images/bg1.png");
+    font-weight: 500;
+}
+div,p,h1,h2,h3,h4,h5,h6,a{
+    text-decoration: none;
+}
+ul,dl,dd,body,h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+section {
+    overflow: hidden;
+}
+
+/*清除浮动*/
+.clearfix:after{
+    content: "";
+    height: 0;
+    line-height:0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+}
+.clearfix{
+    *zoom:1;
+}
+
+/*版心*/
+.container {
+    width: 88%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/*section-1*/
+.section-1 {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    overflow: hidden;
+}
+.section-1__title {
+    width: 200px;
+    height: 76px;
+    margin: 20px auto;
+    transition: all 0.6s ease-in-out;
+}
+
+.section-1__title:hover {
+    -webkit-transform: rotateX(360deg);
+    transform: rotateX(360deg);
+}
+.section-1__bgSwitch {
+    position: fixed;
+    left: 20px;
+    top: 35%;
+}
+.section-1__bgSwitch span {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.section-1__bgSwitch-tips {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    right: -55px;
+    top: 10px;
+    font-weight: 700;
+    background: url("../images/dialog.png");
+    opacity: 0;
+    -webkit-transform: translate(0,-100%);
+    transform: translate(0,-100%);
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+.section-1__bgSwitch-tips__status_animate {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+}
+
+.section-1 .show {
+    display: block;
+}
+
+
+/*section-2*/
+.section-2 {
+    width: 100%;
+    height: 750px;
+    position: relative;
+    overflow: hidden;
+}
+/*nav*/
+nav.section-2__nav {
+    width: 712px;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+}
+
+nav.section-2__nav_status_fixed {
+    position: fixed !important;
+    top:0;
+    left:50%;
+    margin-left: -356px;
+    z-index: 2000;
+}
+
+nav.section-2__nav > a {
+    width: 20%;
+    height: 100%;
+    display: block;
+    float: left;
+    font-size: 2.2rem;
+    text-align: center;
+    color: #333;
+    font-weight: 700;
+}
+
+nav.section-2__nav_status_fixed > a {
+    color: #fff;
+}
+nav.section-2__nav > a:hover {
+    text-shadow:2px 2px 4px rgba(51, 51, 51, 0.6)
+}
+a.section-2__nav-item_status_active {
+    text-shadow:2px 2px 4px rgba(51, 51, 51, 0.6);
+}
+
+.section-2__nav-tip {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: url("../images/star.png") center center no-repeat;
+    transition: all 1s ease-in-out;
+}
+.section-2__title {
+    width: 147px;
+    height: 38px;
+    background: url("../images/aboutme.png") no-repeat top center;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.section-2__description {
+    text-align: center;
+    margin-top: 40px;
+}
+.section-2__photo {
+    float: left;
+    width: 175px;
+    height: 233px;
+    background-color: lightpink;
+    margin-top: 100px;
+    margin-left: 15%;
+    text-align: center;
+}
+.section-2__photo > p {
+    line-height: 30px;
+}
+.section-2__icon{
+    float: left;
+    margin-left: 17%;
+    margin-top: 60px;
+}
+.section-2__icon > div {
+    width: 82px;
+    height: 20px;
+    margin-bottom: 35px;
+    padding-top: 71px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+.section-2__icon > div.current {
+    -webkit-transform: scale(1.2,1.2);
+    transform: scale(1.2,1.2);
+}
+.section-2__icon > div:hover{
+    -webkit-transform: scale(1.2,1.2);
+    transform: scale(1.2,1.2);
+}
+.section-2__icon > div:nth-child(1){
+    padding-top: 76px;
+}
+.section-2__icon-1 {
+    background: url("../images/about_icon-1.png") no-repeat top center;
+}
+.section-2__icon-2 {
+    background: url("../images/about_icon-2.png") no-repeat top center;
+}
+.section-2__icon-3 {
+    background: url("../images/about_icon-3.png") no-repeat top center;
+}
+
+.section-2__content {
+    float: right;
+    margin-right: 15%;
+    margin-top: -45px;
+    position: relative;
+    width: 344px;
+    height: 411px;
+}
+
+.section-2__content > img {
+    position: absolute;
+    display: none;
+    top : 0;
+    left: 0;
+}
+.section-2__content > img.show {
+    display: block;
+}
+.section-2__line {
+    position: absolute;
+    width: 626px;
+    height: 15px;
+    background: url("../images/line-1.png") no-repeat;
+    left: 50%;
+    margin-left: -313px;
+    bottom: 5%;
+}
+
+/*section-3*/
+.section-3 {
+    width: 100%;
+    height: 850px;
+    position: relative;
+}
+.section-3__title {
+    width: 147px;
+    height: 34px;
+    background: url("../images/skills.png") no-repeat top center;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.section-3__description {
+    text-align: center;
+    margin-top: 40px;
+}
+.section-3__circle {
+    position: absolute;
+    left: 0;
+    top: 120px;
+}
+.section-3__content {
+    font-family: "宋体" !important;
+    position: absolute;
+    right: 40px;
+    top: 160px;
+    width: 400px;
+    height: 570px;
+    border-radius: 20px;
+    -webkit-box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: rotateZ(15deg);
+    transform: rotateZ(15deg);
+    transition: all .6s ease-in-out;
+    overflow: hidden;
+}
+.section-3__content:hover{
+    transform: rotateZ(0deg);
+}
+.section-3__tuding-1 {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background: url("../images/tuding.png") no-repeat;
+    top: 122px;
+    right: 412px;
+}
+.section-3__tuding-2 {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background: url("../images/tuding2.png") no-repeat;
+    top: 128px;
+    right: 12px;
+    transform: translate(0,-100%);
+    opacity: 0;
+    transition: all .7s ease-in-out;
+}
+
+.section-3__tuding-2__status_animate{
+    transform: translate(0,0);
+    opacity: 1;
+}
+
+.section-3__content__tips {
+    width: 100%;
+    height: 100%;
+    font-size: 8rem;
+    text-align: center;
+    margin-top: 150px;
+    opacity: 1;
+    transition: all .6s ease-in-out;
+}
+.section-3__content__tips__status_animate {
+    opacity: 0;
+}
+.section-3__content__main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(222, 222, 222, 0.5);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translate(0,100%);
+    transition: all .7s ease-in-out;
+}
+.section-3__content__main__status_animate {
+    opacity: 1;
+    transform: translate(0,0);
+}
+.section-3__content__main  h4 {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 14px;
+}
+
+.section-3__content__main  p {
+    line-height: 24px;
+    text-align: left;
+    padding-left: 15px;
+}
+.section-3__content__main .skill {
+    background: url("../images/skill.png") no-repeat 145px 8px;
+}
+.section-3__content__main .zhengshu {
+    background: url("../images/zhengshu.png") no-repeat 145px 8px;
+}
+
+.section-3__line {
+    position: absolute;
+    width: 626px;
+    height: 15px;
+    background: url("../images/line-1.png") no-repeat;
+    left: 50%;
+    margin-left: -313px;
+    bottom: 20px;
+}
+
+/*section-4*/
+.section-4 {
+    width: 100%;
+    height: 800px;
+    position: relative;
+}
+.section-4__title {
+    width: 158px;
+    height: 28px;
+    background: url("../images/polifolio.png") no-repeat top center;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.section-4__description {
+    text-align: center;
+    margin-top: 40px;
+}
+.section-4__description p {
+    line-height: 25px;
+}
+
+.section-4__carrousel {
+    width: 100%;
+    height:600px;
+    position: relative;
+    margin-top: 30px;
+}
+.section-4__carrousel-item {
+    width: 600px;
+    height: 281px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.section-4__carrousel-item > .mask {
+    width: 600px;
+    height: 281px;
+    position: absolute;
+    left: 0;
+    top:-100%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all .6s ease-in-out;
+}
+
+.section-4__carrousel-item > .mask > img {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    left: 50%;
+    margin-left: -32px;
+    top: 45px;
+}
+
+.section-4__carrousel-item:hover > .mask {
+    top:0;
+}
+
+.section-4__carrousel-item > a {
+    width: 600px;
+    height: 281px;
+    position: absolute;
+    left: 0;
+    top:0;
+    z-index: 100;
+}
+
+.section-4__carrousel-item > .mask > p{
+    font-family: "microsoft yahei" !important;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+    letter-spacing: 2px;
+}
+.section-4__carrousel-item > .mask > p:first-of-type {
+    margin-top: 120px;
+}
+
+.arrow-prev{
+    position: absolute;
+    bottom: 110px;
+    left: 20px;
+    z-index: 1000;
+}
+.arrow-next {
+    position: absolute;
+    bottom: 110px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.arrow {
+    transition: all 0.5s ease-in-out;
+}
+.arrow:hover {
+    transform: scale(1.1,1.1);
+}
+
+
+.section-4__line {
+    position: absolute;
+    width: 626px;
+    height: 15px;
+    background: url("../images/line-1.png") no-repeat;
+    left: 50%;
+    margin-left: -313px;
+    bottom: 60px;
+}
+
+
+/*section-5*/
+.section-5 {
+    height: 800px;
+    width: 100%;
+    position: relative;
+}
+
+.section-5__title {
+    width: 190px;
+    height: 38px;
+    background: url("../images/contact.png") no-repeat top center;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.section-5__description {
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+.section-5__touchMe {
+    width: 1000px;
+    height: 350px;
+    margin: 60px auto;
+    cursor: pointer;
+    position: relative;
+    font-family: "microsoft yahei";
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+}
+.section-5__touchMe a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    cursor: pointer;
+}
+.section-5__touchMe .outer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    backface-visibility : hidden;
+    cursor: pointer;
+}
+.section-5__touchMe .inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    transform: rotateX(-180deg);
+    backface-visibility : hidden;
+    z-index: 10;
+    cursor: pointer;
+}
+.section-5__touchMe .inner,
+.section-5__touchMe .outer {
+    transition: all .6s ease-in-out;
+}
+
+.section-5__touchMe__github {
+    width: 394px;
+    height: 350px;
+    position: absolute;
+    background-color: #94948f;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+.section-5__touchMe__github > .outer{
+    background: url("../images/github.png") center center no-repeat;
+}
+.section-5__touchMe__github > a:hover ~ .inner{
+    transform: rotateX(0);
+}
+.section-5__touchMe__github > a:hover ~ .outer{
+    transform: rotateX(-180deg);
+}
+.section-5__touchMe__right {
+    width: 606px;
+    height: 350px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+}
+.section-5__touchMe__right > div {
+    position: relative;
+    width: 303px;
+    height: 175px;
+    float: left;
+    text-align: center;
+}
+.section-5__touchMe__right > div:nth-child(1),
+.section-5__touchMe__right > div:nth-child(4) {
+    background-color: #67a0a2;
+}
+.section-5__touchMe__right > div:nth-child(2),
+.section-5__touchMe__right > div:nth-child(3) {
+    background-color: #4f4f50;
+}
+
+.section-5__touchMe__qq > .outer {
+    background: url("../images/QQ.png") center center no-repeat;
+}
+.section-5__touchMe__mail > .outer {
+    background: url("../images/mail.png") center center no-repeat;
+}
+.section-5__touchMe__mobile > .outer {
+    background: url("../images/mobile.png") center center no-repeat;
+}
+.section-5__touchMe__blog > .outer {
+    background: url("../images/blog.png") center center no-repeat;
+}
+
+.section-5__touchMe__right > div:hover > .inner {
+    transform: rotateX(0);
+}
+.section-5__touchMe__right > div:hover > .outer {
+    transform: rotateX(-180deg);
+}
+
+.section-5__touchMe__github > .inner,
+.section-5__touchMe__blog > .inner {
+    background: #fff url("../images/jump.png") no-repeat top right;
+}
+.section-5__touchMe p {
+    margin-top: 80px;
+}
+
+.section-5__touchMe__github > .inner > img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 65px auto 0;
+}
+.section-5__touchMe__github > .inner > p {
+    margin-top: 15px;
+}
+
+.section-5__panda {
+    background: url("../images/panda.png") no-repeat top center;
+    width: 260px;
+    height: 50px;
+    position: absolute;
+    bottom: -125px;
+    left: 50%;
+    margin-left: -130px;
+    transition: all 1s ease-in-out;
+    padding-top: 200px;
+    text-align: center;
+    font-size: 3rem;
+    line-height: 40px;
+    z-index: 1000;
+}
+.section-5__panda:hover {
+    transform: translate(0,-125px);
+}
+
+/*侧边栏*/
+.asideNav {
+    position: fixed;
+    bottom: 150px;
+    right: 0;
+    font-weight: 700;
+    font-size: 1.6rem;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: -2px 3px 20px 0px rgba(7, 17, 27, 0.1);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    transition: all 1s ease-in-out;
+}
+
+.asideNav__item {
+    display: block;
+    width: 80px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    color: #333;
+}
+
+.asideNav_animate_init {
+    transform: translate(100%,0);
+}
+
+.asideNav__item:first-child{
+    border:none;
+}
+.asideNav__item:hover,
+.asideNav__item_status_active {
+    color: #ff0000;
+}
+
+/*回到顶部*/
+.backTop {
+    width: 64px;
+    height: 64px;
+    background: url("../images/backtop.png") no-repeat top center;
+    position: fixed;
+    z-index: 1000;
+    right: 10px;
+    bottom: 40px;
+    transition: all 1s ease-in-out;
+    opacity: 1;
+    transform: translate(0,0);
+    cursor: pointer;
+}
+.backTop_animate_init {
+    transform: translate(0,100%);
+    opacity: 0;
+}
+
+/*导航背景*/
+.nav-bg {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    z-index: 1999;
+    top: 0;
+    left: 0;
+    background: rgba(192, 192, 192, 0.5);
+    display: none;
+}
+
+.nav-bg_status_show {
+    display: block !important;
+}
+
